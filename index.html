@@ -23,16 +23,15 @@
             flex-direction: column;
         }
 
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
+        .header {
             padding: 2rem;
-            flex: 1;
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
-            text-align: center;
+            gap: 1.5rem;
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
         }
 
         .logo {
@@ -40,11 +39,11 @@
             height: 120px;
             background: white;
             border-radius: 20px;
-            margin-bottom: 2rem;
             display: flex;
             align-items: center;
             justify-content: center;
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            flex-shrink: 0;
         }
 
         .logo img {
@@ -56,6 +55,26 @@
             font-size: 2rem;
             color: #667eea;
             font-weight: bold;
+        }
+
+        .tagline {
+            color: white;
+            font-size: 1.8rem;
+            font-weight: 600;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
         }
 
         .main-content {
@@ -70,7 +89,7 @@
         h1 {
             font-size: 2.5rem;
             margin-bottom: 1rem;
-            color: #2c3e50;
+            color: #800020;
         }
 
         .subtitle {
@@ -105,6 +124,12 @@
             justify-content: center;
             border: 2px solid #e9ecef;
             transition: transform 0.3s ease;
+        }
+
+        .wallet-icon img {
+            max-width: 45px;
+            max-height: 45px;
+            object-fit: contain;
         }
 
         .wallet-icon:hover {
@@ -193,18 +218,27 @@
         }
 
         @media (max-width: 768px) {
+            .header {
+                padding: 1rem;
+                gap: 1rem;
+            }
+
+            .tagline {
+                font-size: 1.3rem;
+            }
+
             .container {
                 padding: 1rem;
             }
-            
+
             h1 {
                 font-size: 2rem;
             }
-            
+
             .main-content {
                 padding: 2rem;
             }
-            
+
             .wallet-icons {
                 gap: 1rem;
             }
@@ -212,26 +246,30 @@
     </style>
 </head>
 <body>
-    <div class="container">
+    <header class="header">
         <div class="logo">
-            <!-- Replace this div with your logo image -->
             <img src="logo.png" alt="DA Wallet Logo">
-            <!--div class="logo-placeholder">📱</div-->
         </div>
-        
+        <div class="tagline">Menschen und Technologie zusammenbringen</div>
+    </header>
+
+    <div class="container">
         <div class="main-content">
-            <h1>Bald verfügbar</h1>
-            <!--p class="subtitle">Digital Stamp Cards</p-->
+            <h1>Digitale&nbsp;Stempelkarten</h1>
+            <p class="subtitle">Digitale Kundenbindung. Einfach. Direkt. Zukunftssicher.</p>
             <p class="description">
-                Kundenbindung neu gedacht – digital, einfach, effektiv
+                Mit DA Wallet stärkst du die Beziehung zu deinen Kunden – mit digitalen Lösungen, zum Beispiel Stempelkarten, die direkt ins Apple&nbsp;Wallet und Google&nbsp;Wallet gespeichert werden.
             </p>
-            
+            <p class="description">
+                Ohne App. Ohne Papier. Ohne Aufwand.
+            </p>
+
             <div class="wallet-icons">
                 <div class="wallet-icon" title="Apple Wallet">
-                    🍎
+                    <img src="apple-wallet-logo.png" alt="Apple Wallet Logo">
                 </div>
                 <div class="wallet-icon" title="Google Wallet">
-                    📱
+                    <img src="google-wallet-logo.png" alt="Google Wallet Logo">
                 </div>
             </div>
             
