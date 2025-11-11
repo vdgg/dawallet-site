@@ -289,6 +289,8 @@
     
     <footer class="footer">
         <a href="#" class="impressum-link" onclick="openImpressum()">Impressum</a>
+        <span style="color: white; opacity: 0.8; margin: 0 0.5rem;">|</span>
+        <a href="#" class="impressum-link" onclick="openDatenschutz()">Datenschutzerklärung</a>
     </footer>
 
     <!-- Impressum Modal -->
@@ -297,6 +299,16 @@
             <span class="close" onclick="closeImpressum()">&times;</span>
             <div class="impressum-content">
                 <iframe src="impressum.html"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Datenschutz Modal -->
+    <div id="datenschutzModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeDatenschutz()">&times;</span>
+            <div class="impressum-content">
+                <iframe src="datenschutz.html"></iframe>
             </div>
         </div>
     </div>
@@ -310,11 +322,23 @@
             document.getElementById('impressumModal').style.display = 'none';
         }
 
+        function openDatenschutz() {
+            document.getElementById('datenschutzModal').style.display = 'block';
+        }
+
+        function closeDatenschutz() {
+            document.getElementById('datenschutzModal').style.display = 'none';
+        }
+
         // Close modal when clicking outside of it
         window.onclick = function(event) {
-            var modal = document.getElementById('impressumModal');
-            if (event.target == modal) {
-                modal.style.display = 'none';
+            var impressumModal = document.getElementById('impressumModal');
+            var datenschutzModal = document.getElementById('datenschutzModal');
+            if (event.target == impressumModal) {
+                impressumModal.style.display = 'none';
+            }
+            if (event.target == datenschutzModal) {
+                datenschutzModal.style.display = 'none';
             }
         }
 
@@ -322,6 +346,7 @@
         document.addEventListener('keydown', function(event) {
             if (event.key === 'Escape') {
                 closeImpressum();
+                closeDatenschutz();
             }
         });
     </script>
